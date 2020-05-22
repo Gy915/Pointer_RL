@@ -1,0 +1,111 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+from data_generate import DataLoader
+from actor import Actor
+from config import get_config, print_config
+
+
+
+### Model: Critic (state value function approximator) = slim mean Attentive (parametric baseline ***)
+###        w/ moving baseline (init_value default = 7 for TSP20, 20 for TSP40)       
+###        Encoder = w/ FFN ([3] num_stacks / [16] num_heads / inner_FFN = 4*hidden_dim / [0.1] dropout_rate)
+###        Decoder init_state = train, mean(enc)                                
+###        Decoder inputs = Encoder outputs
+###        Decoder Glimpse = Attention_g on ./(mask - first) + Residual connection
+
+
+
+
+def main():
+    # Get running configuration
+    config, _ = get_config()
+    print_config()
+
+    # Build tensorflow graph from config
+    print("Building graph...")
+    actor = Actor(config)
+
+    # Saver to save & restore all the variables.
+    variables_to_save = [v for v in tf.global_variables() if 'Adam' not in v.name]
+    saver = tf.train.Saver(var_list=variables_to_save, keep_checkpoint_every_n_hours=1.0)
+
+    print("Starting session...")
+    with tf.Session() as sess:
+        # Run initialize op
+        sess.run(tf.global_variables_initializer())
+
+        # Restore variables from disk.
+        if config.restore_model==True:
+            saver.restore(sess, "./save/"+config.restore_from+"/tmp.ckpt-8")
+            print("Model restored.")
+    
+        # Initialize data generator
+        training_set = DataLoader(config.batch_size, config.max_length, config.input_dimension)
+        # Training mode
+        if not config.inference_mode:
+
+            # Summary writer
+            writer = tf.summary.FileWriter(config.log_dir, sess.graph)
+
+            print("Starting training...")
+            for i in tqdm(range(config.nb_epoch)):
+                # Get feed dict
+                input_batch = training_set.gen_train_dataset()
+                feed = {actor.input_: input_batch}
+
+                # Forward pass & train step
+                summary, base_op, train_step1, train_step2   = sess.run([actor.merged, actor.base_op, actor.train_step1, actor.train_step2], feed_dict=feed)
+
+                if i % 10 == 0:
+                    writer.add_summary(summary,i)
+                # Save the variables to disk
+                if i % max(1,int(config.nb_epoch/5)) == 0 and i!=0 :
+                    save_path = saver.save(sess,"save/"+config.save_to+"/tmp.ckpt", global_step=i)
+                    print("\n Model saved in file: %s" % save_path)
+
+            print("Training COMPLETED !")
+            saver.save(sess,"save/"+config.save_to+"/actor.ckpt")
+
+
+        # Inference mode
+        else:
+
+            targets=[]
+            predictions=[]
+
+            for __ in tqdm(range(1000)): # num of examples
+
+                # Get feed_dict (single input)
+                seed_ = 1+__
+                input_batch = training_set.gen_test_dataset()
+                feed = {actor.input_: input_batch}
+                #print("input_batch:", input_batch)
+                # Solve instance (OR tools)
+                #opt_trip, opt_length = training_set.solve_instance(or_sequence)
+                targets.append(1)
+                #print('\n Optimal length:',opt_length/100)
+
+                ################################### UMPA LOOOOP HERE ###################################    nb_loop / temperature
+
+                # Sample solutions
+               	permutations, circuit_length = sess.run([actor.positions, actor.distances], feed_dict=feed)
+                #training_set.visualize_sampling(permutations)
+
+           	    # Find best solution
+                j = np.argmin(circuit_length)
+                best_permutation = permutations[j][:-1]
+                predictions.append(circuit_length[j])
+                print(best_permutation, circuit_length[j])
+
+            predictions = np.asarray(predictions)
+            print(' Mean length:',np.mean(predictions))
+            ratio = np.asarray(predictions)/np.asarray(targets)
+            print('\n Average deviation: \n', np.mean(ratio))
+
+if __name__ == "__main__":
+    main()
