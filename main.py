@@ -3,7 +3,6 @@
 
 import tensorflow as tf
 import numpy as np
-import matplotlib.pyplot as plt
 from tqdm import tqdm
 from data_generate import DataLoader
 from actor import Actor

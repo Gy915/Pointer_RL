@@ -12,7 +12,7 @@ input_batch = tf.convert_to_tensor(input_)
 agent = Agent(config, input_batch)
 position,_,pointing = agent.compute()
 
-loss_ = tf.nn.softmax_cross_entropy_with_logits(logits=pointing, labels=label)
+loss_ = tf.losses.mean_squared_error(pointing, label)
 loss = tf.reduce_mean(loss_)
 opt = tf.train.AdamOptimizer()
 train_op = opt.minimize(loss)

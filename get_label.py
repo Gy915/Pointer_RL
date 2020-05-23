@@ -26,9 +26,10 @@ def label_data(_input):
     batch = _input.shape[0]
     seq = _input.shape[1]
     label = []
+    order = []
     for i in range(batch):
         # Here, we get the best solution
-        order = []
+        b_order = []
         best_len = 100000000
         for j in range(200):
             seed = np.random.rand(seq)
@@ -37,8 +38,9 @@ def label_data(_input):
             _len = length(x_y, t_order)
             if(_len < best_len):
                 best_len = _len
-                order = t_order
-        o_h_oreder = one_hot(order)
+                b_order = t_order
+        o_h_oreder = one_hot(b_order)
+        order.append(b_order)
         label.append(o_h_oreder)
     return np.array(label), np.array(order)
 
