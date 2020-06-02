@@ -34,8 +34,56 @@ class DataLoader(object):
         label, order = get_label.label_data(_input_batch)
         return label, _input_batch, order
 
+    def from_txt(self):
+        type = 0
+        batch_input = []
+        label = []
+        order = []
+        num = 0;
+        for line in open("train.txt"):
+            if(type==0):
+                coor = []
+                line = line[1:-2] #[,],[,],[,],[,]
+                l = line.split(']') # [ '[a, b', '[a,b',  ]
+                for _data in l:
+                    i = 0
+                    if(i == len(_data)):
+                        break
+                    while(_data[i]!='['):
+                        i+=1
+
+                    data = _data[i + 1:]
+                    x, y = data.split(',')
+                    x = float(x)
+                    y = float(y[1:])
+                    coor.append([x, y])
+                batch_input.append(coor)
+                type = 1
+            else:
+                list = line[1:-2].split(" ")
+                _label = []
+                _order = []
+                for i in list:
+                    if(i!=''):
+                        _label.append(int(i))
+                        _order.append(int(i))
+                _label = get_label.one_hot(np.array(_label))
+                label.append(_label)
+                order.append(_order)
+
+                type = 0
+
+            num += 1
+            if(num == self.batch_size * 2 ):
+                break
+
+        return np.array(label), np.array(batch_input), np.array(order)
+
+
+
 
 if __name__ == '__main__':
     dataloader = DataLoader(5, 20, 2)
-    label, input_b = dataloader.gen_label_train()
-    print(label)
+
+    label, batch_input = dataloader.from_txt()
+    print(label, batch_input)

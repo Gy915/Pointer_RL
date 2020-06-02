@@ -15,8 +15,8 @@ class Agent(object):
             # Ptr-net returns permutations (self.positions), with their log-probability for backprop
             self.ptr = Pointer_decoder(self.encoder_output, self.config)
     def compute(self):
-        positions, log_softmax , pointing= self.ptr.loop_decode()
-        return positions, log_softmax, pointing
+        positions, log_softmax , pointing, mask_score= self.ptr.loop_decode()
+        return positions, log_softmax, pointing, mask_score
 
 def multihead_attention(inputs, num_units=None, num_heads=16, dropout_rate=0.1, is_training=True):
     with tf.variable_scope("multihead_attention", reuse=None):
@@ -192,6 +192,7 @@ class Pointer_decoder(object):
         self.positions = []  # store visited cities for reward
         self.attending = []  # for vizualition
         self.pointing = []  # for vizualition
+        self.mask_score = []
 
         ########################################
         ########## Initialize process ##########
@@ -239,6 +240,7 @@ class Pointer_decoder(object):
         masked_scores = scores - 100000000. * self.mask  # [Batch size, seq_length]
         pointing = tf.nn.softmax(masked_scores, name="attention")  # [Batch size, Seq_length]
         self.pointing.append(pointing)
+        self.mask_score.append(masked_scores)
 
         return masked_scores
 
@@ -297,8 +299,9 @@ class Pointer_decoder(object):
         # Stack attending & pointing distribution
         self.attending = tf.stack(self.attending, axis=1)  # [Batch,seq_length,seq_length]
         self.pointing = tf.stack(self.pointing, axis=1)  # [Batch,seq_length,seq_length]
+        self.mask_score = tf.stack(self.mask_score, axis=1)
 
         # Return stacked lists of visited_indices and log_softmax for backprop
-        return self.positions, self.log_softmax, self.pointing
+        return self.positions, self.log_softmax, self.pointing, self.mask_score
 
 

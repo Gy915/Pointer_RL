@@ -5,26 +5,44 @@ from data_generate import  DataLoader
 import numpy as np
 import tqdm
 
-label, input_, order= DataLoader(batch_size=1).gen_label_train()
+def acc(order, out):
+    batch = order.shape[0]
+    len = order.shape[1]
+    acc = 0
+    for i in range(batch):
+        flag = 1;
+        for j in range(len):
+            if(order[i][j] != out[i][j]):
+                flag = 0
+                break
+
+        acc+=flag
+
+    return acc
+
+
+label, batch_input, order= DataLoader(batch_size=128).from_txt()
 config, _= get_config()
-input_ = np.array(input_,dtype=np.float32)
+input_ = np.array(batch_input,dtype=np.float32)
 input_batch = tf.convert_to_tensor(input_)
 agent = Agent(config, input_batch)
-position,_,pointing = agent.compute()
+position,_,pointing, mask_score = agent.compute()
+
 
 loss_ = tf.losses.mean_squared_error(pointing, label)
 loss = tf.reduce_mean(loss_)
-opt = tf.train.AdamOptimizer()
-train_op = opt.minimize(loss)
+opt = tf.train.AdamOptimizer(learning_rate=0.00001)
+train_op = opt.minimize(loss_)
 
 
 with tf.Session() as sess:
     tf.global_variables_initializer().run()
-    print(order)
+
     for i in range(5000):
         sess.run(train_op)
         if i%10==0:
-            print(sess.run(position))
+            out = sess.run(position)
+            print(acc(order, out))
             print(sess.run(loss))
 
 
