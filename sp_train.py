@@ -3,6 +3,7 @@ from config import get_config
 from Agent import Agent
 from data_generate import  DataLoader
 import numpy as np
+import matplotlib.pyplot as plt
 import tqdm
 
 def acc(order, out):
@@ -21,37 +22,37 @@ def acc(order, out):
     return acc
 
 
-label, batch_input, order= DataLoader(batch_size=128).from_txt()
-config, _= get_config()
+label, batch_input, order = DataLoader(batch_size=1).from_txt()
+config, _ = get_config()
 input_ = np.array(batch_input,dtype=np.float32)
 input_batch = tf.convert_to_tensor(input_)
-agent = Agent(config, input_batch)
-position,_,pointing, mask_score = agent.compute()
+agent_sp = Agent(config, input_batch, label=label)
 
+x = []
+y = []
+#
+# loss = tf.nn.softmax_cross_entropy_with_logits(logits=pointing, labels=label)
+#
+# opt = tf.train.AdamOptimizer(learning_rate=0.0001)
+#
+# train_op = opt.minimize(loss)
+#
+# soft_max = tf.nn.softmax(pointing)
+#
+# cross_entropy = -tf.reduce_sum(label*tf.log(soft_max))
 
-loss_ = tf.losses.mean_squared_error(pointing, label)
-loss = tf.reduce_mean(loss_)
-opt = tf.train.AdamOptimizer(learning_rate=0.00001)
-train_op = opt.minimize(loss_)
-
-
+print(label)
+plt.ion()
 with tf.Session() as sess:
     tf.global_variables_initializer().run()
 
     for i in range(5000):
-        sess.run(train_op)
-        if i%10==0:
-            out = sess.run(position)
-            print(acc(order, out))
-            print(sess.run(loss))
 
-
-
-
-
-
-
-
-
-
-
+        if(i%5==0):
+            x.append(i)
+            _, loss, softmax, loss_by_me, position= sess.run([agent_sp.train_op,agent_sp.reduce_loss, agent_sp.soft_max, agent_sp.loss_by_me, agent_sp.positions])
+            print(position)
+            print(acc(order, position))
+            y.append(loss)
+            plt.plot(x, y)
+            plt.pause(0.01)

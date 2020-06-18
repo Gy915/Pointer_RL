@@ -6,17 +6,46 @@ distr = tf.contrib.distributions
 
 class Agent(object):
 
-    def __init__(self, config, input_):
+    def __init__(self, config, input_, type = 0, label = None):
+
         self.config = config
+        self.input_ = input_
+
+        if type != 1:
+            self.sp_train(label)
+    def compute(self,type = 1):
+
+        if(type == 1):
+            input_train = self.input_
+        else:
+            input_train = tf.placeholder(tf.float32, shape=(self.config.batch_size, self.config.max_length, self.config.max_length))
         with tf.variable_scope("encoder"):
             self.Encoder = Attentive_encoder(self.config)
-            self.encoder_output = self.Encoder.encode(input_)
+            self.encoder_output = self.Encoder.encode(input_train)
         with tf.variable_scope('decoder'):
             # Ptr-net returns permutations (self.positions), with their log-probability for backprop
             self.ptr = Pointer_decoder(self.encoder_output, self.config)
-    def compute(self):
-        positions, log_softmax , pointing, mask_score= self.ptr.loop_decode()
-        return positions, log_softmax, pointing, mask_score
+        self.positions, self.log_softmax , self.pointing, self.mask_score= self.ptr.loop_decode()
+        return self.positions, self.log_softmax, self.pointing, self.mask_score
+
+    def sp_train(self, label):
+
+        self.compute()
+        self.label = label
+        self.loss = 0
+
+
+        for i in range(label.shape[0]):
+            self.loss += tf.nn.softmax_cross_entropy_with_logits(logits=self.mask_score[i], labels=self.label[i])
+
+        self.soft_max = tf.nn.softmax(self.mask_score)
+
+        self.loss_by_me = -label*tf.log(self.soft_max + 1e-10)
+        self.opt = tf.train.AdamOptimizer(learning_rate=0.0001)
+
+        self.train_op = self.opt.minimize(self.loss_by_me)
+
+        self.reduce_loss = tf.reduce_sum(self.loss_by_me)
 
 def multihead_attention(inputs, num_units=None, num_heads=16, dropout_rate=0.1, is_training=True):
     with tf.variable_scope("multihead_attention", reuse=None):
@@ -217,7 +246,7 @@ class Pointer_decoder(object):
                                  name="scores_g")  # [Batch size, seq_length]
 
         # Attend to current city and cities to visit only (Apply mask)
-        attention_g = tf.nn.softmax(scores_g - 100000000. * (self.mask - self.first_city_hot),
+        attention_g = tf.nn.softmax(scores_g - 1000. * (self.mask - self.first_city_hot),
                                     name="attention_g")  ###########
         self.attending.append(attention_g)
 
@@ -237,7 +266,7 @@ class Pointer_decoder(object):
         scores = self.C * tf.tanh(scores)  # control entropy
 
         # Point to cities to visit only (Apply mask)
-        masked_scores = scores - 100000000. * self.mask  # [Batch size, seq_length]
+        masked_scores = scores - 1000. * self.mask  # [Batch size, seq_length]
         pointing = tf.nn.softmax(masked_scores, name="attention")  # [Batch size, Seq_length]
         self.pointing.append(pointing)
         self.mask_score.append(masked_scores)

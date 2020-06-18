@@ -24,7 +24,7 @@ net_arg.add_argument('--num_stacks', type=int, default=3, help='actor LSTM num_n
 
 # Data
 data_arg = add_argument_group('Data')
-data_arg.add_argument('--batch_size', type=int, default=32, help='batch size')
+data_arg.add_argument('--batch_size', type=int, default=1, help='batch size')
 data_arg.add_argument('--input_dimension', type=int, default=2, help='city dimension')
 data_arg.add_argument('--max_length', type=int, default=20, help='number of deliveries')
 

@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c032f7a-f1ff-4a0a-8f10-c4e35cf088c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GS_GenerateData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Self_Net_TSP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Self_Net_TSP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sp_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/sp_train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,40 +145,41 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1348" height="202" key="GridCell.Tab.0.bottom" timestamp="1591115475234">
+    <state width="1348" height="340" key="GridCell.Tab.0.bottom" timestamp="1592476850553">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="202" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1591115475234" />
-    <state width="1348" height="202" key="GridCell.Tab.0.center" timestamp="1591115475234">
+    <state width="1348" height="340" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
+    <state width="1348" height="340" key="GridCell.Tab.0.center" timestamp="1592476850553">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="202" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1591115475234" />
-    <state width="1348" height="202" key="GridCell.Tab.0.left" timestamp="1591115475234">
+    <state width="1348" height="340" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
+    <state width="1348" height="340" key="GridCell.Tab.0.left" timestamp="1592476850552">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="202" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1591115475234" />
-    <state width="1348" height="202" key="GridCell.Tab.0.right" timestamp="1591115475234">
+    <state width="1348" height="340" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1592476850552" />
+    <state width="1348" height="340" key="GridCell.Tab.0.right" timestamp="1592476850553">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="202" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1591115475234" />
-    <state width="1348" height="324" key="GridCell.Tab.1.bottom" timestamp="1591115475219">
+    <state width="1348" height="340" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
+    <state width="1348" height="340" key="GridCell.Tab.1.bottom" timestamp="1592476850554">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="324" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1591115475219" />
-    <state width="1348" height="324" key="GridCell.Tab.1.center" timestamp="1591115475219">
+    <state width="1348" height="340" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1592476850554" />
+    <state width="1348" height="340" key="GridCell.Tab.1.center" timestamp="1592476850553">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="324" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1591115475219" />
-    <state width="1348" height="324" key="GridCell.Tab.1.left" timestamp="1591115475219">
+    <state width="1348" height="340" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
+    <state width="1348" height="340" key="GridCell.Tab.1.left" timestamp="1592476850553">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="324" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1591115475219" />
-    <state width="1348" height="324" key="GridCell.Tab.1.right" timestamp="1591115475219">
+    <state width="1348" height="340" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
+    <state width="1348" height="340" key="GridCell.Tab.1.right" timestamp="1592476850554">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="324" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1591115475219" />
+    <state width="1348" height="340" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1592476850554" />
     <state x="186" y="81" key="SettingsEditor" timestamp="1591076357918">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -191,12 +188,25 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="690" height="442" key="XDebugger.FullValuePopup/0.0.1368.872@0.0.1368.872" timestamp="1591087891293" />
+    <state x="295" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1592469513975">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="295" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1368.872@0.0.1368.872" timestamp="1592469513975" />
     <state x="349" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1591112507279">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="349" y="186" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1591112507279" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sp_train.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="line" />
