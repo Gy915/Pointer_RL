@@ -72,8 +72,8 @@ class Actor(object):
         #     # Ptr-net returns permutations (self.positions), with their log-probability for backprop
         #     self.ptr = Pointer_decoder(encoder_output, self.config)
         #     self.positions, self.log_softmax = self.ptr.loop_decode()
-            self.agent = Agent(self.config,self.input_)
-            self.positions, self.log_softmax, self.pointing=self.agent.compute()
+            self.agent = Agent(self.config,self.input_, type=1)
+            self.positions, self.log_softmax, self.pointing, _, _=self.agent.compute()
             variable_summaries('log_softmax',self.log_softmax, with_max_min = True)
             
 

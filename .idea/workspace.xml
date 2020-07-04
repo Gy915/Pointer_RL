@@ -20,9 +20,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c032f7a-f1ff-4a0a-8f10-c4e35cf088c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/load_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-0.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-0.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-0.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-100.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-100.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-100.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-200.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-200.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-200.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-300.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-300.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-300.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-400.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-400.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/20/model/tmp.ckpt-400.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1100.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1100.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1100.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1200.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1200.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1200.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1300.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1300.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1300.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1400.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1400.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1400.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1500.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1500.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-1500.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2400.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2400.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2400.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2500.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2500.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2500.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2600.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2600.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2600.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2700.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2700.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2700.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2800.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2800.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/sp/model/tmp.ckpt-2800.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/summary/20/repo/events.out.tfevents.1593707752.DESKTOP-55UL773" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/summary/20/repo/events.out.tfevents.1593708663.DESKTOP-55UL773" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/summary/20/repo/events.out.tfevents.1593864299.DESKTOP-55UL773" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_model/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_model/tmp.ckpt.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_model/tmp.ckpt.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_model/tmp.ckpt.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GS_GenerateData.py" beforeDir="false" afterPath="$PROJECT_DIR$/GS_GenerateData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actor.py" beforeDir="false" afterPath="$PROJECT_DIR$/actor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save/20/model/checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/save/20/model/checkpoint" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sp_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/sp_train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,16 +101,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ckcpRFImA54zwpfzmTltr9zJSR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.sp_train">
+  <component name="RunManager" selected="Python.main">
     <configuration name="GS_GenerateData" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_Net_TSP" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,6 +157,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="load_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Self_Net_TSP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/load_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Self_Net_TSP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="sp_train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_Net_TSP" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,7 +222,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.sp_train" />
+        <item itemvalue="Python.load_model" />
         <item itemvalue="Python.GS_GenerateData" />
         <item itemvalue="Python.data_generate" />
       </list>
@@ -147,70 +255,98 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1348" height="340" key="GridCell.Tab.0.bottom" timestamp="1592476850553">
+    <state x="446" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593680302610">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="340" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
-    <state width="1348" height="340" key="GridCell.Tab.0.center" timestamp="1592476850553">
+    <state x="446" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1368.872@0.0.1368.872" timestamp="1593680302610" />
+    <state width="534" height="466" key="DebuggerActiveHint" timestamp="1593762271589">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="340" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
-    <state width="1348" height="340" key="GridCell.Tab.0.left" timestamp="1592476850552">
+    <state width="534" height="466" key="DebuggerActiveHint/0.0.1368.872@0.0.1368.872" timestamp="1593762271589" />
+    <state x="465" y="191" key="FileChooserDialogImpl" timestamp="1593436039340">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="340" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1592476850552" />
-    <state width="1348" height="340" key="GridCell.Tab.0.right" timestamp="1592476850553">
+    <state x="465" y="191" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1593436039340" />
+    <state width="1348" height="292" key="GridCell.Tab.0.bottom" timestamp="1593864282943">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="340" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
-    <state width="1348" height="340" key="GridCell.Tab.1.bottom" timestamp="1592476850554">
+    <state width="1348" height="292" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1593864282943" />
+    <state width="1348" height="292" key="GridCell.Tab.0.center" timestamp="1593864282943">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="340" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1592476850554" />
-    <state width="1348" height="340" key="GridCell.Tab.1.center" timestamp="1592476850553">
+    <state width="1348" height="292" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1593864282943" />
+    <state width="1348" height="292" key="GridCell.Tab.0.left" timestamp="1593864282943">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="340" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
-    <state width="1348" height="340" key="GridCell.Tab.1.left" timestamp="1592476850553">
+    <state width="1348" height="292" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1593864282943" />
+    <state width="1348" height="292" key="GridCell.Tab.0.right" timestamp="1593864282943">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="340" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1592476850553" />
-    <state width="1348" height="340" key="GridCell.Tab.1.right" timestamp="1592476850554">
+    <state width="1348" height="292" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1593864282943" />
+    <state width="1348" height="300" key="GridCell.Tab.1.bottom" timestamp="1593864237973">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="340" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1592476850554" />
+    <state width="1348" height="300" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1593864237973" />
+    <state width="1348" height="300" key="GridCell.Tab.1.center" timestamp="1593864237973">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1348" height="300" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1593864237973" />
+    <state width="1348" height="300" key="GridCell.Tab.1.left" timestamp="1593864237973">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1348" height="300" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1593864237973" />
+    <state width="1348" height="300" key="GridCell.Tab.1.right" timestamp="1593864237973">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1348" height="300" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1593864237973" />
     <state x="186" y="81" key="SettingsEditor" timestamp="1591076357918">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="186" y="81" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1591076357918" />
-    <state width="690" height="442" key="XDebugger.FullValuePopup" timestamp="1591087891293">
+    <state width="690" height="442" key="XDebugger.FullValuePopup" timestamp="1593762347408">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="690" height="442" key="XDebugger.FullValuePopup/0.0.1368.872@0.0.1368.872" timestamp="1591087891293" />
+    <state width="690" height="442" key="XDebugger.FullValuePopup/0.0.1368.872@0.0.1368.872" timestamp="1593762347408" />
     <state x="295" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1592469513975">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="295" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1368.872@0.0.1368.872" timestamp="1592469513975" />
-    <state x="349" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1591112507279">
+    <state x="350" y="187" width="672" height="678" key="search.everywhere.popup" timestamp="1593690893875">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="349" y="186" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1591112507279" />
+    <state x="350" y="187" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1593690893875" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/load_model.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sp_train.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="3" />
+          <line>51</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="line" />
+        <watch expression="line" language="Python" />
         <watch expression="order[0][:]" language="Python" />
+        <watch expression="order" language="Python" />
+        <watch expression="tf.global_variables()" language="Python" />
+        <watch expression="tf.global_variables" language="Python" />
       </configuration>
     </watches-manager>
   </component>

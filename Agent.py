@@ -9,24 +9,23 @@ class Agent(object):
     def __init__(self, config, input_, type = 0, label = None):
 
         self.config = config
-        self.input_ = input_
-
+        if(type==1):
+            self.input_ = input_
+        else:
+            self.input_ = tf.placeholder(tf.float32, shape=(self.config.batch_size, self.config.max_length, self.config.input_dimension))
+        self.type = type
         if type != 1:
             self.sp_train(label)
-    def compute(self,type = 1):
+    def compute(self):
 
-        if(type == 1):
-            input_train = self.input_
-        else:
-            input_train = tf.placeholder(tf.float32, shape=(self.config.batch_size, self.config.max_length, self.config.max_length))
         with tf.variable_scope("encoder"):
             self.Encoder = Attentive_encoder(self.config)
-            self.encoder_output = self.Encoder.encode(input_train)
+            self.encoder_output = self.Encoder.encode(self.input_)
         with tf.variable_scope('decoder'):
             # Ptr-net returns permutations (self.positions), with their log-probability for backprop
             self.ptr = Pointer_decoder(self.encoder_output, self.config)
-        self.positions, self.log_softmax , self.pointing, self.mask_score= self.ptr.loop_decode()
-        return self.positions, self.log_softmax, self.pointing, self.mask_score
+        self.positions, self.log_softmax , self.pointing, self.mask_score, self.scores= self.ptr.loop_decode()
+        return self.positions, self.log_softmax, self.pointing, self.mask_score, self.scores
 
     def sp_train(self, label):
 
@@ -40,12 +39,13 @@ class Agent(object):
 
         self.soft_max = tf.nn.softmax(self.mask_score)
 
-        self.loss_by_me = -label*tf.log(self.soft_max + 1e-10)
+        self.loss_by_me = -label*tf.log(self.soft_max+1e-5)
+
         self.opt = tf.train.AdamOptimizer(learning_rate=0.0001)
 
         self.train_op = self.opt.minimize(self.loss_by_me)
 
-        self.reduce_loss = tf.reduce_sum(self.loss_by_me)
+        self.reduce_loss = tf.reduce_sum(self.loss_by_me)/(self.config.batch_size * self.config.max_length)
 
 def multihead_attention(inputs, num_units=None, num_heads=16, dropout_rate=0.1, is_training=True):
     with tf.variable_scope("multihead_attention", reuse=None):
@@ -222,6 +222,7 @@ class Pointer_decoder(object):
         self.attending = []  # for vizualition
         self.pointing = []  # for vizualition
         self.mask_score = []
+        self.scores = []
 
         ########################################
         ########## Initialize process ##########
@@ -270,6 +271,7 @@ class Pointer_decoder(object):
         pointing = tf.nn.softmax(masked_scores, name="attention")  # [Batch size, Seq_length]
         self.pointing.append(pointing)
         self.mask_score.append(masked_scores)
+        self.scores.append(scores)
 
         return masked_scores
 
@@ -329,8 +331,8 @@ class Pointer_decoder(object):
         self.attending = tf.stack(self.attending, axis=1)  # [Batch,seq_length,seq_length]
         self.pointing = tf.stack(self.pointing, axis=1)  # [Batch,seq_length,seq_length]
         self.mask_score = tf.stack(self.mask_score, axis=1)
-
+        self.scores = tf.stack(self.scores, axis=1)
         # Return stacked lists of visited_indices and log_softmax for backprop
-        return self.positions, self.log_softmax, self.pointing, self.mask_score
+        return self.positions, self.log_softmax, self.pointing, self.mask_score, self.scores
 
 

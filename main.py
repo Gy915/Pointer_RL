@@ -30,7 +30,7 @@ def main():
     actor = Actor(config)
 
     # Saver to save & restore all the variables.
-    variables_to_save = [v for v in tf.global_variables() if 'Adam' not in v.name]
+    variables_to_save = [v for v in tf.global_variables() if (v.name.startswith("encoder") | v.name.startswith("decoder")| v.name.startswith("loop") | v.name.startswith("beta1_power:0") |v.name.startswith("beta2_power:0")) and  'Adam' not in v.name]
     saver = tf.train.Saver(var_list=variables_to_save, keep_checkpoint_every_n_hours=1.0)
 
     print("Starting session...")
@@ -40,7 +40,9 @@ def main():
 
         # Restore variables from disk.
         if config.restore_model==True:
-            saver.restore(sess, "./save/"+config.restore_from+"/tmp.ckpt-8")
+            saver.restore(sess, "./save/"+config.sp_save+"/tmp.ckpt-2800")
+
+
             print("Model restored.")
     
         # Initialize data generator

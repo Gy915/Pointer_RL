@@ -49,7 +49,7 @@ def Get_Data(_num_points = 20):
 
 
 if __name__ == '__main__':
-    f = open("train.txt", "a")
+    f = open("test.txt", "a")
     for i in range(128):
         points_coor, best_points, best_dis = Get_Data()
         recoder = str(points_coor) + '\n' + str(best_points) + '\n'

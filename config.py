@@ -24,7 +24,7 @@ net_arg.add_argument('--num_stacks', type=int, default=3, help='actor LSTM num_n
 
 # Data
 data_arg = add_argument_group('Data')
-data_arg.add_argument('--batch_size', type=int, default=1, help='batch size')
+data_arg.add_argument('--batch_size', type=int, default=128, help='batch size')
 data_arg.add_argument('--input_dimension', type=int, default=2, help='city dimension')
 data_arg.add_argument('--max_length', type=int, default=20, help='number of deliveries')
 
@@ -45,12 +45,13 @@ train_arg.add_argument('--C', type=float, default=10.0, help='pointer_net tan cl
 misc_arg = add_argument_group('User options') #####################################################
 
 misc_arg.add_argument('--inference_mode', type=str2bool, default=False, help='switch to inference mode when model is trained')
-misc_arg.add_argument('--restore_model', type=str2bool, default=False, help='whether or not model is retrieved')
+misc_arg.add_argument('--restore_model', type=str2bool, default=True, help='whether or not model is retrieved')
 
 misc_arg.add_argument('--save_to', type=str, default='20/model', help='saver sub directory')
 misc_arg.add_argument('--restore_from', type=str, default='20/model', help='loader sub directory')  ###
 misc_arg.add_argument('--log_dir', type=str, default='summary/20/repo', help='summary writer log directory') 
 
+misc_arg.add_argument("--sp_save", type=str, default='sp/model', help = 'saver sp res')
 
 def get_config():
   config, unparsed = parser.parse_known_args()

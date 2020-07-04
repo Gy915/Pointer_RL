@@ -34,13 +34,13 @@ class DataLoader(object):
         label, order = get_label.label_data(_input_batch)
         return label, _input_batch, order
 
-    def from_txt(self):
+    def from_txt(self, path):
         type = 0
         batch_input = []
         label = []
         order = []
         num = 0;
-        for line in open("train.txt"):
+        for line in open(path):
             if(type==0):
                 coor = []
                 line = line[1:-2] #[,],[,],[,],[,]
@@ -55,7 +55,9 @@ class DataLoader(object):
                     data = _data[i + 1:]
                     x, y = data.split(',')
                     x = float(x)
+                    x = round(x, 2)
                     y = float(y[1:])
+                    y = round(y, 2)
                     coor.append([x, y])
                 batch_input.append(coor)
                 type = 1
